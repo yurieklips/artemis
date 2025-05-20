@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artemis & Heaven - Notre Histoire d'Amour</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="floating-hearts">
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-heart heart"></i>
+    </div>
+
+    <div class="music-control">
+        <button id="toggleMusic" class="music-button">
+            <span class="music-icon">🎵</span>
+            <span class="music-text">Musique</span>
+        </button>
+        <audio id="backgroundMusic" loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div class="container">
+        <div class="proposal-card">
+            <h1>Artemis & Heaven</h1>
+            <div class="main-heart"></div>
+            <p class="proposal-text">Voulez-vous m'épouser ?</p>
+            
+            <div class="love-quote">
+                <p>"L'amour est la plus belle des poésies"</p>
+            </div>
+
+            <div class="contract-section">
+                <h2>Contrat de Mariage</h2>
+                <div class="contract-content">
+                    <p class="contract-intro">Nous, soussignés,</p>
+                    
+                    <div class="contract-parties">
+                        <p>Artemis</p>
+                        <p>et</p>
+                        <p>Heaven</p>
+                    </div>
+
+                    <div class="contract-terms">
+                        <p>Déclarons solennellement notre amour éternel et notre engagement à :</p>
+                        <ul>
+                            <li>Nous aimer et nous respecter chaque jour</li>
+                            <li>Partager nos joies et nos peines</li>
+                            <li>Construire ensemble notre avenir</li>
+                            <li>Être fidèles et loyaux l'un envers l'autre</li>
+                            <li>Nous soutenir mutuellement dans les bons comme dans les mauvais moments</li>
+                            <li class="special-engagement">Ken 3 fois par jour minimum, avec passion et dévotion</li>
+                        </ul>
+                    </div>
+
+                    <div class="love-promises">
+                        <h3>Nos Promesses</h3>
+                        <div class="promises-grid">
+                            <div class="promise">
+                                <span class="promise-icon">💑</span>
+                                <p>Rester ensemble pour toujours</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💕</span>
+                                <p>S'aimer chaque jour davantage</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💖</span>
+                                <p>Construire notre bonheur</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💝</span>
+                                <p>Partager nos rêves</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💘</span>
+                                <p>Être fidèles pour la vie</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💗</span>
+                                <p>Prendre soin l'un de l'autre</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💓</span>
+                                <p>Grandir ensemble</p>
+                            </div>
+                            <div class="promise">
+                                <span class="promise-icon">💞</span>
+                                <p>Protéger notre amour</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="contract-closing">En témoignage de notre engagement, nous signons ce contrat de mariage.</p>
+                </div>
+            </div>
+            
+            <div class="signature-section">
+                <div class="signature-box">
+                    <h3>Artemis</h3>
+                    <canvas id="artemisSignature" class="signature-pad"></canvas>
+                </div>
+                
+                <div class="signature-box">
+                    <h3>Heaven</h3>
+                    <canvas id="heavenSignature" class="signature-pad"></canvas>
+                </div>
+            </div>
+
+            <button id="validateButton" class="validate-button" onclick="validateSignatures()">Valider</button>
+
+            <div class="date-section">
+                <p>Fait dans <span id="location">ton cul</span>, le <span id="currentDate"></span></p>
+            </div>
+
+            <button onclick="resetSignatures()" class="reset-button">Réinitialiser</button>
+
+            <div class="love-message">
+                <p>Même si tu tape sur mon égo,<br>
+                Je t'aime.</p>
+            </div>
+
+            <div class="hundred-things">
+                <h2>100 Choses Que J'Aime Chez Toi</h2>
+                <div class="things-grid">
+                    <div class="thing-item">1. J'aime cet homme pour sa manière unique de voir le monde</div>
+                    <div class="thing-item">2. Il sait toujours trouver les bons mots au bon moment</div>
+                    <div class="thing-item">3. J'aime sa manière d'écouter vraiment, sans jamais interrompre</div>
+                    <div class="thing-item">4. Il me respecte profondément, dans toutes mes décisions</div>
+                    <div class="thing-item">5. Il prend mes sentiments au sérieux, même les plus discrets</div>
+                    <div class="thing-item">6. Il est stable, calme, et rassurant</div>
+                    <div class="thing-item">7. Il est toujours honnête, même quand la vérité est difficile à entendre</div>
+                    <div class="thing-item">8. J'admire sa capacité à rester fidèle à lui-même</div>
+                    <div class="thing-item">9. Il me pousse à donner le meilleur de moi-même</div>
+                    <div class="thing-item">10. Il partage ses pensées avec clarté et sincérité</div>
+                    <div class="thing-item">11. Il accepte mes silences sans les forcer</div>
+                    <div class="thing-item">12. Il me traite toujours avec dignité</div>
+                    <div class="thing-item">13. Il me fait rire avec intelligence</div>
+                    <div class="thing-item">14. Il comprend mes humeurs sans jamais me juger</div>
+                    <div class="thing-item">15. Il me donne confiance en moi, juste par ses mots</div>
+                    <div class="thing-item">16. Il valorise mon opinion même quand elle diffère de la sienne</div>
+                    <div class="thing-item">17. Il me montre chaque jour ce qu'est la loyauté</div>
+                    <div class="thing-item">18. Il ne cherche jamais à me changer</div>
+                    <div class="thing-item">19. Il est ouvert d'esprit et curieux</div>
+                    <div class="thing-item">20. Il garde mes secrets avec soin</div>
+                    <div class="thing-item">21. Il me fait me sentir écouté et compris</div>
+                    <div class="thing-item">22. Il assume pleinement qui il est</div>
+                    <div class="thing-item">23. Il est attentionné sans être envahissant</div>
+                    <div class="thing-item">24. Il sait garder son calme dans les situations tendues</div>
+                    <div class="thing-item">25. Il respecte mes limites sans poser de questions</div>
+                    <div class="thing-item">26. Il est constant, fiable, toujours là quand il le faut</div>
+                    <div class="thing-item">27. Il est cultivé, et j'apprends toujours quelque chose à ses côtés</div>
+                    <div class="thing-item">28. Il ne se moque jamais de mes erreurs</div>
+                    <div class="thing-item">29. Il me donne envie de grandir</div>
+                    <div class="thing-item">30. Il me traite comme un égal</div>
+                    <div class="thing-item">31. Il s'intéresse sincèrement à ce que je pense</div>
+                    <div class="thing-item">32. Il reste humble malgré ses qualités</div>
+                    <div class="thing-item">33. Il sait reconnaître ses torts</div>
+                    <div class="thing-item">34. Il fait preuve d'une grande maturité émotionnelle</div>
+                    <div class="thing-item">35. Il me soutient sans attendre quelque chose en retour</div>
+                    <div class="thing-item">36. Il est cohérent entre ce qu'il dit et ce qu'il fait</div>
+                    <div class="thing-item">37. Il ne fuit pas les conversations difficiles</div>
+                    <div class="thing-item">38. Il accepte mes failles comme faisant partie de moi</div>
+                    <div class="thing-item">39. Il est toujours sincère, sans manipulation</div>
+                    <div class="thing-item">40. Il défend ses valeurs avec calme et assurance</div>
+                    <div class="thing-item">41. Il me surprend avec sa manière de penser</div>
+                    <div class="thing-item">42. Il m'apprend à voir les choses autrement</div>
+                    <div class="thing-item">43. Il ne cherche pas à avoir raison, il cherche à comprendre</div>
+                    <div class="thing-item">44. Il est disponible sans être dépendant</div>
+                    <div class="thing-item">45. Il est passionné, et ça m'inspire</div>
+                    <div class="thing-item">46. Il a une éthique forte, et ça se sent</div>
+                    <div class="thing-item">47. Il garde les pieds sur terre, même quand tout s'agite</div>
+                    <div class="thing-item">48. Il respecte mon espace personnel et mental</div>
+                    <div class="thing-item">49. Il me parle avec franchise, toujours</div>
+                    <div class="thing-item">50. Il agit avec intégrité</div>
+                    <div class="thing-item">51. Il respecte mes croyances, même quand il n'est pas d'accord</div>
+                    <div class="thing-item">52. Il est discret sur ce qui doit l'être</div>
+                    <div class="thing-item">53. Il m'enseigne la patience par l'exemple</div>
+                    <div class="thing-item">54. Il me montre chaque jour ce qu'est l'écoute active</div>
+                    <div class="thing-item">55. Il fait preuve d'une grande empathie</div>
+                    <div class="thing-item">56. Il me soutient dans mes projets, même les plus fous</div>
+                    <div class="thing-item">57. Il ne minimise jamais ce que je ressens</div>
+                    <div class="thing-item">58. Il est stable dans ses engagements</div>
+                    <div class="thing-item">59. Il parle de ses émotions sans peur ni honte</div>
+                    <div class="thing-item">60. Il respecte mes silences comme un langage</div>
+                    <div class="thing-item">61. Il me fait me sentir important par la place qu'il me laisse</div>
+                    <div class="thing-item">62. Il ne cherche pas à me dominer, mais à construire avec moi</div>
+                    <div class="thing-item">63. Il comprend mes besoins sans que je les crie</div>
+                    <div class="thing-item">64. Il sait quand il faut parler et quand il faut juste être là</div>
+                    <div class="thing-item">65. Il me fait réfléchir par sa manière de penser</div>
+                    <div class="thing-item">66. Il m'aide à mieux me connaître</div>
+                    <div class="thing-item">67. Il accepte ma sensibilité</div>
+                    <div class="thing-item">68. Il me parle avec bienveillance</div>
+                    <div class="thing-item">69. Il garde sa parole</div>
+                    <div class="thing-item">70. Il est responsable, il assume ses choix</div>
+                    <div class="thing-item">71. Il n'a pas peur d'admettre ses erreurs</div>
+                    <div class="thing-item">72. Il sait poser les bonnes questions</div>
+                    <div class="thing-item">73. Il me fait sentir libre d'être moi</div>
+                    <div class="thing-item">74. Il fait attention aux détails</div>
+                    <div class="thing-item">75. Il garde sa dignité en toutes circonstances</div>
+                    <div class="thing-item">76. Il ne force jamais une discussion, il l'invite</div>
+                    <div class="thing-item">77. Il agit en accord avec ses principes</div>
+                    <div class="thing-item">78. Il fait preuve de justesse dans ses jugements</div>
+                    <div class="thing-item">79. Il valorise ce que je suis, pas ce que je fais</div>
+                    <div class="thing-item">80. Il a ce côté un peu immature qui le rend attachant</div>
+                    <div class="thing-item">81. Il me fait rire même quand il agit un peu bêtement</div>
+                    <div class="thing-item">82. Il sait rire de lui-même avec simplicité</div>
+                    <div class="thing-item">83. Il joue parfois comme un ado, mais sans jamais manquer de respect</div>
+                    <div class="thing-item">84. Son petit côté gamin adoucit les moments lourds</div>
+                    <div class="thing-item">85. Il ne se prend pas toujours au sérieux, et c'est reposant</div>
+                    <div class="thing-item">86. Il garde une part d'insouciance qui m'attendrit</div>
+                    <div class="thing-item">87. Il fait des blagues nulles et ça me fait sourire</div>
+                    <div class="thing-item">88. Il a l'innocence d'un enfant par moments, et j'adore ça</div>
+                    <div class="thing-item">89. Son immaturité occasionnelle rend les choses plus légères</div>
+                    <div class="thing-item">90. Il me rappelle de ne pas trop me prendre la tête</div>
+                    <div class="thing-item">91. Il trouve de la joie dans des choses simples</div>
+                    <div class="thing-item">92. Il fait des erreurs naïves, mais toujours avec bonne intention</div>
+                    <div class="thing-item">93. Il reste un peu rêveur, et j'aime cette spontanéité</div>
+                    <div class="thing-item">94. Il me ramène à l'essentiel avec son côté simple</div>
+                    <div class="thing-item">95. Il n'a pas peur d'être un peu ridicule</div>
+                    <div class="thing-item">96. Il n'essaie pas d'être parfait, juste vrai</div>
+                    <div class="thing-item">97. Il a gardé une âme d'enfant dans un esprit mature</div>
+                    <div class="thing-item">98. Même dans ses moments immatures, il me fait du bien</div>
+                    <div class="thing-item">99. Il n'a pas besoin de tout contrôler, et c'est libérateur</div>
+                    <div class="thing-item">100. Il est lui-même, sans filtre, et c'est ce que j'aime par-dessus tout</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti-container" id="confetti"></div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.0.0/dist/signature_pad.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
