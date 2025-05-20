@@ -9,4 +9,4 @@ Une lettre d'amour interactive créée avec HTML, CSS et JavaScript.
 
 ## Déploiement
 
-Le site est déployé via GitHub Pages à l'adresse : [votre-username.github.io/nom-du-repo](https://votre-username.github.io/nom-du-repo) 
+Le site est déployé via GitHub Pages. 
